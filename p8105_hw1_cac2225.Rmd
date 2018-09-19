@@ -2,7 +2,7 @@
 title: "p8105_hw1_cac2225"
 author: "Courtney Chan"
 date: "September 18, 2018"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
