@@ -50,3 +50,4 @@ mean(problem1_df$color_cat)
 The mean function can be applied to the random_samp_ten variable and to the greater_than_2 variable. The random_samp_ten variable is numeric and contains a list of numbers and thus the mean of these numbers can be calculated. greater_than_2 is a logical vector, that can be coded numerically, thus each "True" becomes a 1 and each "False" becomes a 0. The mean can then be taken and can be interpreted as a proportion of 1's within the list.
 
 The mean function cannot be applied to the random_words variable because it is a character variable - it is comprised of letters and does not have a numeric meaning. Nor can it be applied to the color_cat variable because it is a factor variable, which are seen as catagories. Neither of them are numeric or logical variables - it would not make mathematical sense to try and calculate a mean value using non-numeric values.
+
