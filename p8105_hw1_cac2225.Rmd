@@ -74,3 +74,32 @@ as.numeric(as.character(problem1_df$color_cat))
 After the catagory variable, random_Words, has been converted to a factor variable, and then numeric, its conversion follows the previous code's pattern. The random_words take on an alphabetical order as a factor vector and are numbered as such upon being converted to a numeric vector.
 
 The factor vector color_cat, becomes a character vector, which upon being converted into a numeric vector can only display NA. There are no numerical values that can be associated with it.
+
+#Problem 2
+
+##Creating Dataframe 2
+
+The package tidyverse is first loaded so that the tibble function can be used. The seed is set to 2 to allow reproducible results when the random samples of x and y are generated.
+
+Rnorm function is used in this case, to generate random samples from a normal distribution.
+
+```{r Create dataframe2}
+library(tidyverse)
+
+set.seed(2)
+
+problem2_df = tibble(
+  x = rnorm(1000),
+  y = rnorm(1000),
+  sum_xandy = x + y > 0,
+  vnum_sum = as.numeric(sum_xandy),
+  vfac_sum = as.factor(sum_xandy)
+)
+```
+
+##Short Description of dataframe problem2_df
+
+The size of my dataset is `r dim(problem2_df)`.
+The mean of x in my dataset is `r mean(problem2_df$x)`.
+The median of x in my dataset is `r median(problem2_df$x)`.
+The proportion of cases for which the logical vector is "True" is `r mean(problem2_df$sum_xandy)`.
