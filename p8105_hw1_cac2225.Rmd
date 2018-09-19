@@ -126,3 +126,13 @@ Code for scatterplot with coloring based on the factor variable, vfac_sum. False
 plot_vfac_sum = ggplot(problem2_df, aes(color = vfac_sum, x = x, y = y)) + geom_point()
 plot_vfac_sum
 ```
+
+##Saving scatterplots
+
+Below is the code to save the three scatterplots produced.
+
+```{r Saving 3 scatterplots}
+ggsave("plot_sum_xandy.pdf", plot = plot_sum_xandy, height = 4, width = 6)
+ggsave("plot_vnum_sum.pdf", plot = plot_vnum_sum, height = 4, width = 6)
+ggsave("plot_vfac_sum.pdf", plot = plot_vfac_sum, height = 4, width = 6)
+```
