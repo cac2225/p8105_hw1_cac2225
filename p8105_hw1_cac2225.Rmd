@@ -53,7 +53,7 @@ mean(problem1_df$color_cat)
 
 The mean function can be applied to the random_samp_ten variable and to the greater_than_2 variable. The random_samp_ten variable is numeric and contains a list of numbers and thus the mean of these numbers can be calculated. greater_than_2 is a logical vector, that can be coded numerically, thus each "True" becomes a 1 and each "False" becomes a 0. The mean can then be taken and can be interpreted as a proportion of 1's within the list.
 
-The mean function cannot be applied to the random_words variable because it is a character variable - it is comprised of letters and does not have a numeric meaning. Nor can it be applied to the color_cat variable because it is a factor variable, which are seen as catagories. Neither of them are numeric or logical variables - it would not make mathematical sense to try and calculate a mean value using non-numeric values.
+The mean function cannot be applied to the random_words variable because it is a character variable - it is comprised of letters and does not have a numeric meaning. Nor can it be applied to the color_cat variable because it is a factor variable, which are seen as catagories. Neither of them are numeric or logical variables - it would not make mathematical sense to try and calculate their mean values.
 
 ##Applying the as.numeric function
 
@@ -71,7 +71,7 @@ as.numeric(as.factor(problem1_df$random_words))
 as.numeric(as.character(problem1_df$color_cat))
 ```
 
-After the catagory variable, random_Words, has been converted to a factor variable, and then numeric, its conversion follows the previous code's pattern. The random_words take on an alphabetical order as a factor vector and are numbered as such upon being converted to a numeric vector.
+After the catagory variable, random_Words, has been converted to a factor variable, and then numeric, its conversion follows the previous code chunk's pattern. The random_words take on an alphabetical order as a factor vector and are numbered as such upon being converted to a numeric vector.
 
 The factor vector color_cat, becomes a character vector, which upon being converted into a numeric vector can only display NA. There are no numerical values that can be associated with it.
 
@@ -99,7 +99,7 @@ problem2_df = tibble(
 
 ##Short Description of dataframe problem2_df
 
-The size of my dataset is `r dim(problem2_df)`.
+The size of my dataset is `r dim(problem2_df)`, with 1000 rows and 5 columns.
 The mean of x in my dataset is `r mean(problem2_df$x)`.
 The median of x in my dataset is `r median(problem2_df$x)`.
 The proportion of cases for which the logical vector is "True" is `r mean(problem2_df$sum_xandy)`.
@@ -134,10 +134,6 @@ plot_vfac_sum
 
 Below is the code to save the three scatterplots produced.
 
-```{r Saving 3 scatterplots}
+```{r Save scatterplot1}
 ggsave("plot_sum_xandy.pdf", plot = plot_sum_xandy, height = 4, width = 6)
-
-ggsave("plot_vnum_sum.pdf", plot = plot_vnum_sum, height = 4, width = 6)
-
-ggsave("plot_vfac_sum.pdf", plot = plot_vfac_sum, height = 4, width = 6)
 ```
