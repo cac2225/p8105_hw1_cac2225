@@ -110,6 +110,7 @@ Code for scatterplot with coloring based on the logical variable, sum_xandy. Fal
 
 ```{r Plot 1 color via sum_xandy}
 plot_sum_xandy = ggplot(problem2_df, aes(color = sum_xandy, x = x, y = y)) + geom_point()
+
 plot_sum_xandy
 ```
 
@@ -117,6 +118,7 @@ Code for scatterplot with coloring based on the numerical variable, vnum_sum. Va
 
 ```{r Plot 2 color via vnum_sum}
 plot_vnum_sum = ggplot(problem2_df, aes(color = vnum_sum, x = x, y = y)) + geom_point()
+
 plot_vnum_sum
 ```
 
@@ -124,6 +126,7 @@ Code for scatterplot with coloring based on the factor variable, vfac_sum. False
 
 ```{r Plot 3 color via vfac_sum}
 plot_vfac_sum = ggplot(problem2_df, aes(color = vfac_sum, x = x, y = y)) + geom_point()
+
 plot_vfac_sum
 ```
 
@@ -133,6 +136,8 @@ Below is the code to save the three scatterplots produced.
 
 ```{r Saving 3 scatterplots}
 ggsave("plot_sum_xandy.pdf", plot = plot_sum_xandy, height = 4, width = 6)
+
 ggsave("plot_vnum_sum.pdf", plot = plot_vnum_sum, height = 4, width = 6)
+
 ggsave("plot_vfac_sum.pdf", plot = plot_vfac_sum, height = 4, width = 6)
 ```
