@@ -4,3 +4,49 @@ author: "Courtney Chan"
 date: "September 18, 2018"
 output: github_document
 ---
+
+#Problem 1
+
+Writing a chunk of code to define the variables within the dataframe. 
+
+First running the library package tidyverse so that the function tibble will be available.
+
+Then naming the dataframe and starting the tibble function.
+
+Seed is set to 1 so that results are reproducible.
+
+Within the dataframe, "random_sample_ten" is the name of the random sample of 10 numeric values, taken from the uniform distribution of 0 to 5, using the runif function. 
+
+Next the, the logical vector "greater_than_2" is defined based on the values that "random_samp_ten" will generate. Values within random_samp_ten that are greater than 2 will return a value of "True" within greater_than_2's column, while values within random_samp_ten that are equal to or less than 2 will return a value of "False".
+
+A character vector, "random_words", that is length 10 is defined.
+
+A factor vector, "color_cat", that comprises of ten different catagory labels is defined and turned into a factor using the factor function.
+
+```{r Create dataframe}
+library(tidyverse)
+
+set.seed(1)
+
+problem1_df = tibble(
+  random_samp_ten = runif(10,0,5),
+  greater_than_2 = random_samp_ten > 2,
+  random_words = c("My", "name", "is", "Courtney", "Chan","and", "I", "love", "data", "science"),
+  color_cat = factor(c("red","orange","yellow","green","blue","indigo","purple","black","white","grey" ))
+)
+```
+
+Upon running this chunk of code, a table is generated in the environment with the four corresponding columns for each variable: ten random numeric values generated from the runif function, corresponding categorization of the ten random values as either greater than or equal to/less than 2 under a logical vector column, the 10 character vector and the 10 character factor vector.
+
+The next chunk of code will try to take the mean of each variable in the dataframe.
+
+```{r Take means}
+mean(problem1_df$random_samp_ten)
+mean(problem1_df$greater_than_2)
+mean(problem1_df$random_words)
+mean(problem1_df$color_cat)
+```
+
+The mean function can be applied to the random_samp_ten variable and to the greater_than_2 variable. The random_samp_ten variable is numeric and contains a list of numbers and thus the mean of these numbers can be calculated. greater_than_2 is a logical vector, that can be coded numerically, thus each "True" becomes a 1 and each "False" becomes a 0. The mean can then be taken and can be interpreted as a proportion of 1's within the list.
+
+The mean function cannot be applied to the random_words variable because it is a character variable - it is comprised of letters and does not have a numeric meaning. Nor can it be applied to the color_cat variable because it is a factor variable, which are seen as catagories. Neither of them are numeric or logical variables - it would not make mathematical sense to try and calculate a mean value using non-numeric values.
