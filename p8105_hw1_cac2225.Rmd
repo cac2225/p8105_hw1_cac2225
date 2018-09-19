@@ -103,3 +103,26 @@ The size of my dataset is `r dim(problem2_df)`.
 The mean of x in my dataset is `r mean(problem2_df$x)`.
 The median of x in my dataset is `r median(problem2_df$x)`.
 The proportion of cases for which the logical vector is "True" is `r mean(problem2_df$sum_xandy)`.
+
+##Creating scatterplot y vs. x
+
+Code for scatterplot with coloring based on the logical variable, sum_xandy. False values are designated as red, while true values are designated as blue.
+
+```{r Plot 1 color via sum_xandy}
+plot_sum_xandy = ggplot(problem2_df, aes(color = sum_xandy, x = x, y = y)) + geom_point()
+plot_sum_xandy
+```
+
+Code for scatterplot with coloring based on the numerical variable, vnum_sum. Values of 1s are designated as light blue and values of 0s are designated as dark blue.
+
+```{r Plot 2 color via vnum_sum}
+plot_vnum_sum = ggplot(problem2_df, aes(color = vnum_sum, x = x, y = y)) + geom_point()
+plot_vnum_sum
+```
+
+Code for scatterplot with coloring based on the factor variable, vfac_sum. False values are designated as red and True is designated as blue.
+
+```{r Plot 3 color via vfac_sum}
+plot_vfac_sum = ggplot(problem2_df, aes(color = vfac_sum, x = x, y = y)) + geom_point()
+plot_vfac_sum
+```
