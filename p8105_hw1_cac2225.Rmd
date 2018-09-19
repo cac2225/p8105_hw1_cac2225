@@ -132,7 +132,7 @@ plot_vfac_sum
 
 ##Saving scatterplots
 
-Below is the code to save the three scatterplots produced.
+Below is the code to save the first scatterplot produced.
 
 ```{r Save scatterplot1}
 ggsave("plot_sum_xandy.pdf", plot = plot_sum_xandy, height = 4, width = 6)
