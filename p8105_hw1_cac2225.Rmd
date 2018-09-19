@@ -7,6 +7,8 @@ output: github_document
 
 #Problem 1
 
+##Creating the dataframe
+
 Writing a chunk of code to define the variables within the dataframe. 
 
 First running the library package tidyverse so that the function tibble will be available.
@@ -38,6 +40,8 @@ problem1_df = tibble(
 
 Upon running this chunk of code, a table is generated in the environment with the four corresponding columns for each variable: ten random numeric values generated from the runif function, corresponding categorization of the ten random values as either greater than or equal to/less than 2 under a logical vector column, the 10 character vector and the 10 character factor vector.
 
+##Taking the Means
+
 The next chunk of code will try to take the mean of each variable in the dataframe.
 
 ```{r Take means}
@@ -51,3 +55,22 @@ The mean function can be applied to the random_samp_ten variable and to the grea
 
 The mean function cannot be applied to the random_words variable because it is a character variable - it is comprised of letters and does not have a numeric meaning. Nor can it be applied to the color_cat variable because it is a factor variable, which are seen as catagories. Neither of them are numeric or logical variables - it would not make mathematical sense to try and calculate a mean value using non-numeric values.
 
+##Applying the as.numeric function
+
+```{r Apply as.numeric, eval = FALSE}
+as.numeric(problem1_df$greater_than_2)
+as.numeric(problem1_df$random_words)
+as.numeric(problem1_df$color_cat)
+```
+As per instructions, the chunk is shown but the output is not, using eval = FALSE.
+
+Upon applying the as.numeric function to the logical vector greater_than_2, instead of being recorded as "true" and "false," they're recoded as 1s and 0s. When the as.numeric function is applied, the character vector random_Words values, are recoded as NA. Applying as.numeric to the factor vector color_cat, causes the values to be recorded as numbers based on their alphabetical order. The as.numeric function tries to coerce variables into being defined as numeric.
+
+```{r Converting character and factor to numeric}
+as.numeric(as.factor(problem1_df$random_words))
+as.numeric(as.character(problem1_df$color_cat))
+```
+
+After the catagory variable, random_Words, has been converted to a factor variable, and then numeric, its conversion follows the previous code's pattern. The random_words take on an alphabetical order as a factor vector and are numbered as such upon being converted to a numeric vector.
+
+The factor vector color_cat, becomes a character vector, which upon being converted into a numeric vector can only display NA. There are no numerical values that can be associated with it.
