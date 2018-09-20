@@ -91,9 +91,9 @@ set.seed(2)
 problem2_df = tibble(
   x = rnorm(1000),
   y = rnorm(1000),
-  sum_xandy = x + y > 0,
-  vnum_sum = as.numeric(sum_xandy),
-  vfac_sum = as.factor(sum_xandy)
+  sum_x_and_y = x + y > 0,
+  vnum_sum = as.numeric(sum_x_and_y),
+  vfac_sum = as.factor(sum_x_and_y)
 )
 ```
 
@@ -102,16 +102,16 @@ problem2_df = tibble(
 The size of my dataset is `r dim(problem2_df)`, with 1000 rows and 5 columns.
 The mean of x in my dataset is `r mean(problem2_df$x)`.
 The median of x in my dataset is `r median(problem2_df$x)`.
-The proportion of cases for which the logical vector is "True" is `r mean(problem2_df$sum_xandy)`.
+The proportion of cases for which the logical vector is "True" is `r mean(problem2_df$sum_x_and_y)`.
 
 ##Creating scatterplot y vs. x
 
 Code for scatterplot with coloring based on the logical variable, sum_xandy. False values are designated as red, while true values are designated as blue.
 
-```{r Plot 1 color via sum_xandy}
-plot_sum_xandy = ggplot(problem2_df, aes(color = sum_xandy, x = x, y = y)) + geom_point()
+```{r Plot 1 color via sum_x_and_y}
+plot_sum_x_and_y = ggplot(problem2_df, aes(color = sum_x_and_y, x = x, y = y)) + geom_point()
 
-plot_sum_xandy
+plot_sum_x_and_y
 ```
 
 Code for scatterplot with coloring based on the numerical variable, vnum_sum. Values of 1s are designated as light blue and values of 0s are designated as dark blue.
@@ -135,5 +135,5 @@ plot_vfac_sum
 Below is the code to save the first scatterplot produced.
 
 ```{r Save scatterplot1}
-ggsave("plot_sum_xandy.pdf", plot = plot_sum_xandy, height = 4, width = 6)
+ggsave("plot_sum_x_and_y.pdf", plot = plot_sum_x_and_y, height = 4, width = 6)
 ```
